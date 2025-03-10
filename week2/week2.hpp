@@ -15,6 +15,7 @@ bool has_cycle(node* head);
 void reverse_linked_list(node* head);
 node* middle(node* head);
 node* remove_elements(node* head, const int val);
+node* merge_linked_lists(node* h1, node* h2);
 
 bool is_subseq(const std::string& s1, const std::string& s2);
 bool is_palindrome(const std::string& s);

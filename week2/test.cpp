@@ -130,6 +130,20 @@ void tt6(){
 
 }
 
+void tt7(){
+
+    {
+        node* n1 = new node(1); node* n2 = new node(2); node* n3 = new node(3); node* n4 = new node(4);
+        n1->next = n3; n2->next = n4;
+        node* r = merge_linked_lists(n1, n2);
+        assert(n1 == r);
+        assert(n2 == r->next);
+        assert(n3 == r->next->next);
+        assert(n4 == r->next->next->next);
+    }
+
+}
+
 int main(){
     tt1();
     tt2();
@@ -137,6 +151,7 @@ int main(){
     tt4();
     tt5();
     tt6();
+    tt7();
 
     std::cout << "All tests passed!\n";
 

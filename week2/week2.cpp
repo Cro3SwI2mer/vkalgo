@@ -60,6 +60,31 @@ node* remove_elements(node* head, const int val){
     return nhead;
 }
 
+node* merge_linked_lists(node* h1, node* h2){
+    node* dummy;
+    node* curr = dummy;
+
+    while((h1 != nullptr) && (h2 != nullptr)){
+        if(h1->val < h2->val){
+            curr->next = h1;
+            h1 = h1->next;
+        }
+        else{
+            curr->next = h2;
+            h2 = h2->next;
+        }
+        curr = curr->next;
+    }
+
+    if(h1 != nullptr){
+        curr->next = h1;
+    }
+    else{
+        curr->next = h2;
+    }
+
+    return dummy->next;
+}
 
 bool is_subseq(const std::string& s1, const std::string& s2){
     int i1 = 0, i2 = 0;
